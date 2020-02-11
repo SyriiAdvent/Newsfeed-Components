@@ -87,6 +87,36 @@ const data = [
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
 ];
+const articlesContainer = document.querySelector('.articles');
+
+const articleMaker = (param) => {
+  const article = document.createElement('div');
+  const newTitle = document.createElement('h2');
+  const newDate = document.createElement('p');
+
+
+  article.classList.add('article');
+  newTitle.textContent = param.title;
+  newDate.textContent = param.date;
+  newDate.classList.add('date');
+
+  article.appendChild(newTitle);
+  article.appendChild(newDate);
+  // articlesContainer.appendChild(newArticle);
+}
+
+// for(let i = 0; i < data.length; i++) {
+  //   newArticle(data[i]);
+  // }
+  
+  let ArticlesArray = data.map((element, index) => {
+    console.log(element);
+    const newArticle = articleMaker(element);
+    return newArticle;
+})
+
+console.log(ArticlesArray);
+
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
