@@ -3,7 +3,7 @@
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
-    date: 'Nov 5th, 2018',
+    date: "Nov 5th, 2018",
     firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
         moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
         watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
@@ -23,8 +23,8 @@ const data = [
         moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   },
   {
-    title: 'Javascript and You, ES6',
-    date: 'May 7th, 2019',
+    title: "Javascript and You, ES6",
+    date: "May 7th, 2019",
     firstParagraph: `Alohamora wand elf parchment, Wingardium Leviosa hippogriff, house dementors betrayal. Holly, Snape centaur portkey ghost
         Hermione spell bezoar Scabbers. Peruvian-Night-Powder werewolf, Dobby pear-tickle half-moon-glasses, Knight-Bus. Padfoot
         snargaluff seeker: Hagrid broomstick mischief managed. Snitch Fluffy rock-cake, 9 ¾ dress robes I must not tell lies. Mudbloods
@@ -43,8 +43,8 @@ const data = [
         sing above the ground, Ginny Weasley bright red. Fanged frisbees, phoenix tears good clean match.`
   },
   {
-    title: 'React vs Angular vs Vue',
-    date: 'June 7th, 2019',
+    title: "React vs Angular vs Vue",
+    date: "June 7th, 2019",
     firstParagraph: `Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ivysaur Lorem ipsum dolor sit amet, consectetur adipiscing
         elit. Venusaur Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charmander Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Charmeleon Lorem ipsum dolor sit amet, consectetur adipiscing elit. Charizard Lorem ipsum dolor sit amet,
@@ -71,8 +71,8 @@ const data = [
         Castform Lotad the power that's inside Burnt Berry Makuhita. Ghost Ariados Corphish Dusclops Golbat Gligar Zweilous.`
   },
   {
-    title: 'Professional Software Development in 2019',
-    date: 'Jan 1st, 2019',
+    title: "Professional Software Development in 2019",
+    date: "Jan 1st, 2019",
     firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
           hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
           Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
@@ -85,38 +85,69 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: "Future of Web Development",
+    date: "Feb 10st, 2020",
+    firstParagraph: `WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP WEB ASSEMBLY BEEP BOOP `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `WEB ASSEMBLY IS FUUUUUUUTUUUUUREEEEEEE `
   }
 ];
-const articlesContainer = document.querySelector('.articles');
+const articlesContainer = document.querySelector(".articles");
 
-const articleMaker = (param) => {
-  const article = document.createElement('div');
-  const newTitle = document.createElement('h2');
-  const newDate = document.createElement('p');
+const articleMaker = param => {
+  const article = document.createElement("div");
+  const newTitle = document.createElement("h2");
+  const newDate = document.createElement("p");
+  const contentDiv = document.createElement("div");
+  const newText1 = document.createElement("p");
+  const newText2 = document.createElement("p");
+  const newText3 = document.createElement("p");
+  const buttonOpen = document.createElement("span");
+  const buttonClose = document.createElement("span");
 
-
-  article.classList.add('article');
   newTitle.textContent = param.title;
   newDate.textContent = param.date;
-  newDate.classList.add('date');
+  newText1.textContent = param.firstParagraph;
+  newText2.textContent = param.secondParagraph;
+  newText3.textContent = param.thirdParagraph;
+  buttonOpen.textContent = "^";
+  // buttonClose.textContent = "Close";
+
+  article.classList.add("article");
+  newDate.classList.add("date");
+  buttonOpen.classList.add("expandButton");
 
   article.appendChild(newTitle);
   article.appendChild(newDate);
-  // articlesContainer.appendChild(newArticle);
-}
+  article.appendChild(contentDiv);
+  article.children[2].appendChild(newText1);
+  article.children[2].appendChild(newText2);
+  article.children[2].appendChild(newText3);
+  article.appendChild(buttonOpen);
+  // article.appendChild(buttonClose);
+  articlesContainer.appendChild(article);
+};
 
-// for(let i = 0; i < data.length; i++) {
-  //   newArticle(data[i]);
-  // }
-  
-  let ArticlesArray = data.map((element, index) => {
-    console.log(element);
-    const newArticle = articleMaker(element);
-    return newArticle;
-})
+// map isnt very effiecient here, but prepped for future modifying!
+let ArticlesArray = data.map((element, index) => {
+  const newArticle = articleMaker(element);
+});
 
-console.log(ArticlesArray);
+const buttons = document.querySelectorAll(".expandButton");
+const contentArticles = document.querySelectorAll(".article");
 
+buttons.forEach((ele, index) => {
+  ele.addEventListener("click", event => {
+    contentArticles[index].classList.toggle("article-open");
+  });
+});
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
