@@ -146,6 +146,14 @@ const contentArticles = document.querySelectorAll(".article");
 buttons.forEach((ele, index) => {
   ele.addEventListener("click", event => {
     contentArticles[index].classList.toggle("article-open");
+    gsap.to(".article-open", {
+      duration: 1,
+      height: 450,
+      ease: "power2.out"
+    });
+    if (contentArticles[index].classList[1] !== "article-open") {
+      gsap.to(".article", { duration: 1, height: 50 });
+    }
   });
 });
 

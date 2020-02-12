@@ -34,6 +34,14 @@ const menu = document.querySelector(".menu");
 menuButton.addEventListener("click", event => {
   console.log("clicked!");
   menu.classList.toggle("menu--open");
+  if (menu.classList[1] === "menu--open") {
+    console.log("worked");
+    gsap.from(".menu--open", {
+      duration: 1,
+      width: 0,
+      ease: "elastic.out(1, 0.3)"
+    });
+  }
 });
 /* 
 
